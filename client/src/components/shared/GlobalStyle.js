@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: #F2C1AE;
   }
   *,
   ::before,
