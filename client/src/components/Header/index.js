@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Route, Link } from "react-router-dom";
 import logo from '../../assets/images/Logo.png'
-
+import Login from '../Login';
 
 
 const StyledHeader = styled.header`
@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <Nav>
-        <Logo exact to="/"><img src={logo} alt="Logo"></img></Logo> 
+          <Logo exact to="/"><img src={logo} alt="Logo"></img></Logo>
         <LinkLayout>
           <div>
           <StyledLink to="/sign-up">Sign-up</StyledLink>
@@ -52,8 +52,11 @@ export default function Header() {
           </div>
         </LinkLayout>
       </Nav>
+
+      <Route path="/login" render={() => (
+        <Login />
+      )} />
+      
     </StyledHeader>
-
-
   )
 }
