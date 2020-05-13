@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :update, :destroy]
+  before_action :set_category, only: [:show, :update, :destroy, :add_clothingvariation]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /categories
   def index
@@ -37,6 +38,12 @@ class CategoriesController < ApplicationController
   def destroy
     @category.destroy
   end
+
+  # def add_clothing_variation
+  #   @clothing_variation = ClothingVariation.find(params[:clothing_variation_id])
+  #   @category.clothing_variation << @clothing_variation
+  #   render json: @category, include: :clothing_variations
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
