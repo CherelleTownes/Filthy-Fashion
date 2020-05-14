@@ -19,7 +19,7 @@ export default class Login extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleLogin(this.state);
-        this.props.history.push('/');
+        this.props.history.push('/categories');
       }}>
         <h3>Login</h3>
         <label htmlFor="username">username:</label>

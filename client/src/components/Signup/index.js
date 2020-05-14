@@ -22,7 +22,7 @@ export default class Signup extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleRegister(this.state);
-        this.props.history.push('/');
+        this.props.history.push('/categories');
       }}>
         <h3>Sign Up for an Account</h3>
         <label htmlFor="first-name">First Name</label>

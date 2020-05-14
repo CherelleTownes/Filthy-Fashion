@@ -47,6 +47,11 @@ export const getAllCategories = async () => {
   return resp.data;
 }
 
+export const getOneCategory = async (id) => {
+  const resp = await api.get(`/categories/${id}`);
+  return resp.data;
+}
+
 // ========================================
 // ========== clothing variations =========
 // ========================================

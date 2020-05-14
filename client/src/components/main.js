@@ -3,8 +3,15 @@ import { Route } from 'react-router-dom';
 
 import Login from './Login';
 import Signup from './Signup';
-import { getAllCategories, getAllClothingVariations, getOneClothingVariation, postClothingVariation, putClothingVariation, destroyClothingVariation } from '../services/api-helper';
-// import ShowFlavors from './ShowFlavors';
+import {
+  getAllCategories,
+  getOneCategory,
+  getAllClothingVariations,
+  getOneClothingVariation,
+  postClothingVariation,
+  putClothingVariation,
+  destroyClothingVariation} from '../services/api-helper';
+import Categories from './Categories';
 // import ShowFoods from './ShowFoods';
 // import CreateFood from './CreateFood';
 // import UpdateFood from './UpdateFood';
@@ -13,17 +20,24 @@ import { getAllCategories, getAllClothingVariations, getOneClothingVariation, po
 export default class Main extends Component {
   state = {
     categories: [],
+    category: [],
     clothing_variations: []
   }
 
   componentDidMount() {
     this.readAllCategories();
     this.readAllClothingVariations();
+    this.readOneCategory();
   }
 
   readAllCategories = async () => {
     const categories = await getAllCategories();
     this.setState({ categories })
+  }
+
+  readOneCategory = async () => {
+    const category = await getOneCategory();
+    this.setState({ category})
   }
 
   readAllClothingVariations = async () => {
@@ -72,12 +86,17 @@ export default class Main extends Component {
             handleRegister={this.props.handleRegister}
           />
         )} />
-        {/* <Route path='/flavors' render={() => (
-          <ShowFlavors
-            flavors={this.state.flavors}
+        <Route path='/categories' render={() => (
+          <Categories
+            categories={this.state.categories}
           />
         )} />
-        <Route exact path='/foods' render={(props) => (
+          <Route path='/categories/:id' render={() => (
+          <Categories
+            categories={this.state.categories}
+          />
+        )} />
+        {/* <Route exact path='/foods' render={(props) => (
           <ShowFoods
             {...props}
             handleFoodDelete={this.handleFoodDelete}
