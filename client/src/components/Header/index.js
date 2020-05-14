@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Route, Link } from "react-router-dom";
 import logo from '../../assets/images/Logo.png'
-
+import Login from '../Login';
+import Signup from '../Signup';
 
 
 const StyledHeader = styled.header`
@@ -38,22 +39,38 @@ text-decoration: none;
 color: white;
 `;
 
-export default function Header() {
+export default function Header(props) {
   return (
     <StyledHeader>
       <Nav>
-        <Logo exact to="/"><img src={logo} alt="Logo"></img></Logo> 
+          <Logo exact to="/"><img src={logo} alt="Logo"></img></Logo>
         <LinkLayout>
-          <div>
+        <div>
+          {
+            props.currentUser
+                ?
+                <>
+                <h3>Welcome {props.currentUser.username}! Let's Create!</h3>
+                  </>
+              :
           <StyledLink to="/sign-up">Sign-up</StyledLink>
+          }
           </div>
+
+
           <div>
+            {
+              props.currentUser
+                ?
+                <>
+                  <button onClick={props.handleLogout}>Logout</button>
+                </>
+                :
           <StyledLink to="/login">Login</StyledLink>
+          }
           </div>
         </LinkLayout>
       </Nav>
     </StyledHeader>
-
-
   )
 }
