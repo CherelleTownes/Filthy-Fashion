@@ -8,7 +8,7 @@ import Signup from '../Signup';
 
 const StyledHeader = styled.header`
   background-color: #F2C1AE;
-  height: 175px;
+  height: 110px;
   width: 100%;
   border-bottom: 5px solid white;
 `;
@@ -22,7 +22,7 @@ const Nav = styled.nav`
 const Logo = styled(Link)`
   padding-left: 100px;
   img {
-    height:170px;
+    height:105px;
   }
 `;
 
@@ -63,7 +63,7 @@ export default function Header(props) {
               props.currentUser
                 ?
                 <>
-                  <button onClick={props.handleLogout}>Logout</button>
+                  <button onClick={props.handleLogout}>Sign Out</button>
                 </>
                 :
           <StyledLink to="/login">Login</StyledLink>
