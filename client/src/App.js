@@ -10,6 +10,7 @@ import {
   verifyUser,
   removeToken
 } from './services/api-helper';
+import Main from './components/main';
 
 
 
@@ -55,6 +56,10 @@ class App extends Component {
       <div>
         <GlobalStyle />
         <Header />
+        <Main
+          handleRegister={this.handleRegister}
+          handleLogin={this.handleLogin}
+        />
       </div>
     )
   }

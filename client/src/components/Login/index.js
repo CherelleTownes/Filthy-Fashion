@@ -40,7 +40,7 @@ export default class Login extends Component {
           onChange={this.handleChange}
         />
         <br />
-        <Link to='/sign/-up'>Sign-up</Link>
+        <Link to='/sign-up'>Create Account</Link>
         <button>Submit</button>
       </form>
     )

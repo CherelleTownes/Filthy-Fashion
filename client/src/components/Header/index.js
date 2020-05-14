@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Route, Link } from "react-router-dom";
 import logo from '../../assets/images/Logo.png'
 import Login from '../Login';
+import Signup from '../Signup';
 
 
 const StyledHeader = styled.header`
@@ -38,7 +39,7 @@ text-decoration: none;
 color: white;
 `;
 
-export default function Header() {
+export default function Header(props) {
   return (
     <StyledHeader>
       <Nav>
@@ -53,9 +54,13 @@ export default function Header() {
         </LinkLayout>
       </Nav>
 
+      {/* <Route path="/sign-up" render={() => (
+        <Signup handleRegister={props.handleRegister}/>
+      )} />
+
       <Route path="/login" render={() => (
         <Login />
-      )} />
+      )} /> */}
       
     </StyledHeader>
   )
