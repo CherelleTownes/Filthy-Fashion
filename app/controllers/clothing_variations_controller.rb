@@ -1,5 +1,6 @@
 class ClothingVariationsController < ApplicationController
   before_action :set_clothing_variation, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy]
 
   # GET /clothing_variations
   def index
