@@ -12,6 +12,7 @@ import {
   putClothingVariation,
   destroyClothingVariation} from '../services/api-helper';
 import Categories from './Categories';
+import ShowClothingVariations from './ShowClothingVariations';
 // import ShowFoods from './ShowFoods';
 // import CreateFood from './CreateFood';
 // import UpdateFood from './UpdateFood';
@@ -96,14 +97,14 @@ export default class Main extends Component {
             categories={this.state.categories}
           />
         )} />
-        {/* <Route exact path='/foods' render={(props) => (
-          <ShowFoods
+        <Route exact path='/clothing_variations' render={(props) => (
+          <ShowClothingVariations
             {...props}
-            handleFoodDelete={this.handleFoodDelete}
-            foods={this.state.foods}
+            handleClothingVariationDelete={this.handleClothingVariationDelete}
+            clothing_variations={this.state.clothing_variations}
           />
         )} />
-        <Route path="/foods/new" render={(props) => (
+        {/* <Route path="/foods/new" render={(props) => (
           <CreateFood
             {...props}
             handleFoodSubmit={this.handleFoodSubmit}
