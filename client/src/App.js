@@ -3,7 +3,6 @@ import GlobalStyle from './components/shared/GlobalStyle';
 import Header from './components/Header';
 import Login from './components/Login';
 import { withRouter } from 'react-router';
-// import Main from './components/Main';
 import {
   loginUser,
   registerUser,
@@ -55,7 +54,9 @@ class App extends Component {
     return (
       <div>
         <GlobalStyle />
-        <Header />
+        <Header
+          currentUser={this.state.currentUser}
+        />
         <Main
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}

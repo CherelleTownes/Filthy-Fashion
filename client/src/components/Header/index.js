@@ -45,23 +45,20 @@ export default function Header(props) {
       <Nav>
           <Logo exact to="/"><img src={logo} alt="Logo"></img></Logo>
         <LinkLayout>
-          <div>
+        <div>
+          {
+            props.currentUser
+              ?
+              <h3>Let's create {props.currentUser.username}!</h3>
+              :
           <StyledLink to="/sign-up">Sign-up</StyledLink>
+          }
           </div>
           <div>
           <StyledLink to="/login">Login</StyledLink>
           </div>
         </LinkLayout>
       </Nav>
-
-      {/* <Route path="/sign-up" render={() => (
-        <Signup handleRegister={props.handleRegister}/>
-      )} />
-
-      <Route path="/login" render={() => (
-        <Login />
-      )} /> */}
-      
     </StyledHeader>
   )
 }
