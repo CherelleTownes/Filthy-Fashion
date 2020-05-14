@@ -48,14 +48,26 @@ export default function Header(props) {
         <div>
           {
             props.currentUser
-              ?
-              <h3>Let's create {props.currentUser.username}!</h3>
+                ?
+                <>
+                <h3>Welcome {props.currentUser.username}! Let's Create!</h3>
+                  </>
               :
           <StyledLink to="/sign-up">Sign-up</StyledLink>
           }
           </div>
+
+
           <div>
+            {
+              props.currentUser
+                ?
+                <>
+                  <button onClick={props.handleLogout}>Logout</button>
+                </>
+                :
           <StyledLink to="/login">Login</StyledLink>
+          }
           </div>
         </LinkLayout>
       </Nav>
