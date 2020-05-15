@@ -19,7 +19,7 @@ export default class ClothingVariations extends Component {
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        this.props. handleClothingVariationSubmit(this.state);
+        this.props.handleClothingVariationSubmit(this.state);
         this.props.history.push('/clothing_variations');
       }}>
         <h3>Design Your Item</h3>

@@ -15,10 +15,9 @@ import Categories from './Categories';
 import ClothingVariations from './ClothingVariations';
 import ShowClothingVariations from './ShowClothingVariations';
 import EditClothingVariations from './EditClothingVariations';
-// import ShowFoods from './ShowFoods';
-// import CreateFood from './CreateFood';
-// import UpdateFood from './UpdateFood';
-// import FoodItem from './FoodItem';
+import Homepage from './Homepage';
+
+
 
 export default class Main extends Component {
   state = {
@@ -77,6 +76,13 @@ export default class Main extends Component {
   render() {
     return (
       <main>
+        <Route exact path='/' render={(props) => (
+          <Homepage
+            {...props}
+            handleLogin={this.props.handleLogin}
+          />
+        )} />
+
         <Route path='/login' render={(props) => (
           <Login
             {...props}
@@ -118,14 +124,7 @@ export default class Main extends Component {
             clothingVariationId={id}
           />
         }} />
-        {/* <Route exact path='/foods/:id' render={(props) => {
-          const { id } = props.match.params
-          return <FoodItem
-            foodId={id}
-            flavors={this.state.flavors}
-          />
-        }
-        } /> */}
+      
       </main>
     )
   }
