@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { getOneClothingVariation} from '../../services/api-helper';
 
-export default class ClothingVariations extends Component {
+export default class EditClothingVariations extends Component {
   state = {
     description: "",
-    color: "",
-    category_id:this.props.match.params.id
+    color: ""
   }
 
   handleChange = (e) => {
@@ -14,15 +14,29 @@ export default class ClothingVariations extends Component {
       [name]: value
     });
   }
+
+  componentDidMount() {
+    this.setFormData();
+  }
+
+  setFormData = async () => {
+    const clothingVariationItem = await getOneClothingVariation(this.props.clothingVariationId);
+    this.setState({
+      description: clothingVariationItem.description,
+      color: clothingVariationItem.color
+    })
+  }
+
+
   render() {
     const { description, color } = this.state;
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        this.props. handleClothingVariationSubmit(this.state);
+        this.props.handleClothingVariationUpdate(this.props.clothingVariationId, this.state);
         this.props.history.push('/clothing_variations');
       }}>
-        <h3>Design Your Item</h3>
+        <h3>Edit Your Item</h3>
         <label htmlFor="description">Description</label>
         <input
           id="description"
@@ -48,4 +62,3 @@ export default class ClothingVariations extends Component {
     )
   }
 }
-

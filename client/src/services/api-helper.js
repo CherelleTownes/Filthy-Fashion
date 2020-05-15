@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3000';
+const baseUrl = process.env.NODE_ENV === 'production' ? 'https://filthyfashion-api.herokuapp.com/' : 'http://localhost:3000'
 
 const api = axios.create({
   baseURL: baseUrl
@@ -62,7 +62,7 @@ export const getAllClothingVariations = async () => {
 }
 
 export const getOneClothingVariation = async (id) => {
-  const resp = await api.get(`/clothing_variation/${id}`);
+  const resp = await api.get(`/clothing_variations/${id}`);
   return resp.data;
 }
 

@@ -6,12 +6,12 @@ class ClothingVariationsController < ApplicationController
   def index
     @clothing_variations = ClothingVariation.all
 
-    render json: @clothing_variations
+    render json: @clothing_variations, :include => :category
   end
 
   # GET /clothing_variations/1
   def show
-    render json: @clothing_variation
+    render json: @clothing_variation, :include => :category
   end
 
   # POST /clothing_variations
