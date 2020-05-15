@@ -12,10 +12,6 @@ const StyledCategories = styled.section`
 export default function Categories(props) {
   return (
     <div>
-      {/* <h3>TEST TEST</h3>
-      {props.categories.map(category => (
-        <button key={category.id}>{category.name}</button>
-      ))} */}
  <h3>Pick An Item To Create</h3>
       {props.categories.map(category => (
         <Link to={`/categories/${category.id}`}><button key={category.id}>

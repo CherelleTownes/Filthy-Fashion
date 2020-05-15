@@ -10,6 +10,7 @@ import {
   removeToken
 } from './services/api-helper';
 import Main from './components/main';
+import Hero from './components/Hero';
 
 
 
@@ -58,6 +59,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           currentUser={this.state.currentUser}
         />
+          <Hero />
         <Main
           handleRegister={this.handleRegister}
           handleLogin={this.handleLogin}
