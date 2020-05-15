@@ -7,20 +7,6 @@ const StyledCategories = styled.section`
   display: grid;
 `;
 
-
-
-// export default function ShowClothingVariations(props) {
-//   return (
-//     <div>
-//       <h3>All Clothing Variations</h3>
-//       {props.clothing_variations.map(clothing_variation => (
-//         <p key={clothing_variation.id}>{clothing_variation.description}{clothing_variation.color}</p> 
-//         ))}
-//     </div>
-//   )
-// }
-
-
 export default function ShowClothingVariations(props) {
   return (
     <div>
@@ -29,7 +15,7 @@ export default function ShowClothingVariations(props) {
       {props.clothing_variations.map(clothing_variation => (
         
         <React.Fragment key={clothing_variation.id}>
-          <h3>{clothing_variation.category.name}</h3>
+          {clothing_variation.category.name && <h3>{clothing_variation.category.name}</h3>}
           <Link to=
             {`/clothing_variations/${clothing_variation.id}`}>
             {clothing_variation.description}{clothing_variation.color}
