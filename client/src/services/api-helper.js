@@ -62,7 +62,7 @@ export const getAllClothingVariations = async () => {
 }
 
 export const getOneClothingVariation = async (id) => {
-  const resp = await api.get(`/clothing_variation/${id}`);
+  const resp = await api.get(`/clothing_variations/${id}`);
   return resp.data;
 }
 

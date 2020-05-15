@@ -12,7 +12,9 @@ import {
   putClothingVariation,
   destroyClothingVariation} from '../services/api-helper';
 import Categories from './Categories';
+import ClothingVariations from './ClothingVariations';
 import ShowClothingVariations from './ShowClothingVariations';
+import EditClothingVariations from './EditClothingVariations';
 // import ShowFoods from './ShowFoods';
 // import CreateFood from './CreateFood';
 // import UpdateFood from './UpdateFood';
@@ -87,16 +89,19 @@ export default class Main extends Component {
             handleRegister={this.props.handleRegister}
           />
         )} />
-        <Route path='/categories' render={() => (
+        <Route exact path='/categories' render={() => (
           <Categories
             categories={this.state.categories}
           />
         )} />
-          <Route path='/categories/:id' render={() => (
-          <Categories
-            categories={this.state.categories}
-          />
+        
+          <Route path='/categories/:id' render={(props) => (
+          <ClothingVariations
+          {...props}
+          handleClothingVariationSubmit={this.handleClothingVariationSubmit}
+        />
         )} />
+
         <Route exact path='/clothing_variations' render={(props) => (
           <ShowClothingVariations
             {...props}
@@ -104,21 +109,16 @@ export default class Main extends Component {
             clothing_variations={this.state.clothing_variations}
           />
         )} />
-        {/* <Route path="/foods/new" render={(props) => (
-          <CreateFood
-            {...props}
-            handleFoodSubmit={this.handleFoodSubmit}
-          />
-        )} />
-        <Route path='/foods/:id/edit' render={(props) => {
+        
+        <Route path='/clothing_variations/:id/edit' render={(props) => {
           const { id } = props.match.params
-          return <UpdateFood
+          return <EditClothingVariations
             {...props}
-            handleFoodUpdate={this.handleFoodUpdate}
-            foodId={id}
+            handleClothingVariationUpdate={this.handleClothingVariationUpdate}
+            clothingVariationId={id}
           />
         }} />
-        <Route exact path='/foods/:id' render={(props) => {
+        {/* <Route exact path='/foods/:id' render={(props) => {
           const { id } = props.match.params
           return <FoodItem
             foodId={id}
