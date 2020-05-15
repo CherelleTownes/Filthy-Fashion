@@ -3,26 +3,31 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
-
 const StyledClothingVariations = styled.section`
   text-align: center;
-
 `;
 
 const Title = styled.h1`
     font-size: 32px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 50px;
     padding-bottom: 40px;
     color: #8C1B1B;
 `;
 
 const FormLabel = styled.h3`
-  font-size: 28;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 300;
   color: #8C1B1B;
   padding-bottom: 20px;
   padding-top: 30px;
+`;
+
+const Text = styled.p`
+  font-size: 18px;
+  font-weight:300;
+  color: #8C1B1B;
+  padding-bottom: 15px;
 `;
 
 const Description = styled.input`
@@ -108,7 +113,8 @@ export default class ClothingVariations extends Component {
         this.props.handleClothingVariationSubmit(this.state);
         this.props.history.push('/clothing_variations');
       }}>
-        <Title>Design Your Item</Title>
+          <Title>Design Your Item</Title>
+          <Text>Give a detailed description of how you would like your item designed. Don't forget your size!</Text>
         <FormLabel htmlFor="description">Description</FormLabel>
         <Description
           id="description"

@@ -10,7 +10,7 @@ const StyledCategories = styled.section`
 export default function ShowClothingVariations(props) {
   return (
     <div>
-      <h3>All Clothing Variations</h3>
+      <h3>List Of Your Items</h3>
       
       {props.clothing_variations.map(clothing_variation => (
         
