@@ -22,7 +22,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 60px;
-  padding: 77px 29px 154px 29px;
+  padding: 77px 29px 100px 29px;
 `;
 
 const ThreeStepsImages = styled.img`
@@ -39,7 +39,6 @@ const TopText = styled.h2`
 
 const Vector = styled.hr`
   width: 400px;
-  height: 1px;
   border: solid 1px #F2A2A2; 
 `;
 

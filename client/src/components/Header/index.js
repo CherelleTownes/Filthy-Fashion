@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   background-color: #F2C1AE;
   height: 150px;
   width: 100%;
-  border-bottom: 5px solid white;
+  border-bottom: 2px solid white;
 `;
 
 const Nav = styled.nav`
@@ -35,6 +35,7 @@ const LinkLayout = styled.div`
 
 const StyledLink = styled(Link)`
 font-size: 24px;
+font-weight: 300;
 text-decoration: none;
 color: white;
 `;
