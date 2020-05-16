@@ -87,12 +87,12 @@ export default function ShowClothingVariations(props) {
           {clothing_variation.category && <ItemLabel>{clothing_variation.category.name}</ItemLabel>}
           </div>
           
+          
           <StyledLink to=
             {`/clothing_variations/${clothing_variation.id}`}>
-            {clothing_variation.description}{clothing_variation.color}
-            </StyledLink>
-          
-          
+            {clothing_variation.description}<p>{clothing_variation.color}</p>
+          </StyledLink>
+        
           
           <Button onClick={() => {
             props.history.push(`/clothing_variations/${clothing_variation.id}/edit`);
