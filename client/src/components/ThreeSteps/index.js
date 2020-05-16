@@ -71,7 +71,7 @@ export default function ThreeSteps() {
           <ThreeStepsImages src={ThreeStepsImage_2} />
           <TopText>Step 2</TopText>
           <Vector />
-          <BottomText>Enter a detailed description of how you would like your item designed nd select a color. Would you like an ankle length, v-neck dress with long sleeves? Include your size!</BottomText>
+          <BottomText>Enter a detailed description of how you would like your item designed and select a color. Would you like an ankle length, v-neck dress with long sleeves? Include your size!</BottomText>
           </div>
         <div>
           <ThreeStepsImages src={ThreeStepsImage_3} />
