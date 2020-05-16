@@ -7,7 +7,6 @@ import {
   getAllCategories,
   getOneCategory,
   getAllClothingVariations,
-  getOneClothingVariation,
   postClothingVariation,
   putClothingVariation,
   destroyClothingVariation} from '../services/api-helper';

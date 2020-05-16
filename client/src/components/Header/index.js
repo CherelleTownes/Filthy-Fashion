@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../../assets/images/Logo.png'
-import Login from '../Login';
-import Signup from '../Signup';
+
 
 
 const StyledHeader = styled.header`

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Route, Link } from "react-router-dom";
-import logo from '../../assets/images/Logo.png'
+import { Link } from "react-router-dom";
 
 const StyledCategories = styled.section`
   display: grid;
