@@ -10,13 +10,25 @@ const StyledLogin = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 50px;
     align-items: center;
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+    }
 `;
 
 const LoginImage = styled.img`
   width: 100%;
   height: 650px;
   border-radius: 10px;
-  
+  @media (max-width: 425px) {
+    height: 300px;
+    border-radius: 0px;
+  }
+`;
+
+const Form = styled.form`
+  @media (max-width: 425px) {
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -25,6 +37,9 @@ const Title = styled.h1`
     margin-top: -90px;
     padding-bottom: 40px;
     color: #8C1B1B;
+    @media (max-width: 425px) {
+      margin-top: 40px;
+    }
 `;
 
 const FormLabel = styled.h3`
@@ -97,7 +112,7 @@ export default class Login extends Component {
     return (
       <StyledLogin>
         <LoginImage src={LoginImg} />
-      <form onSubmit={(e) => {
+      <Form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleLogin(this.state);
         this.props.history.push('/categories');
@@ -123,7 +138,7 @@ export default class Login extends Component {
         <br />
         <StyledLink to='/sign-up'>Create Account</StyledLink>
         <Button>Submit</Button>
-        </form>
+        </Form>
         </StyledLogin>
     )
   }

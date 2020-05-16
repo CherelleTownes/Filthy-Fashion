@@ -28,6 +28,8 @@ const Text = styled.p`
   font-weight:300;
   color: #8C1B1B;
   padding-bottom: 15px;
+  @media (max-width: 425px) {
+    margin-left: 10px;
 `;
 
 const Description = styled.input`
@@ -86,6 +88,10 @@ const Button = styled.button`
   :hover {
   background-color: #BF6F6F;
   color: white;
+  }
+  @media (max-width: 425px) {
+    width: 50%;
+    margin-bottom: 20px;
   }
 `;
 

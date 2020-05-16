@@ -10,6 +10,11 @@ const StyledShowClothingVariations = styled.section`
   grid-row-gap: 25px;
   text-align: center;
   padding-left: 100px; 
+  @media (max-width: 425px) {
+    grid-row-gap: 35px;
+    grid-column-gap: 5px;
+    padding-left: 5px;
+  }
 `;
 
 const Title = styled.h1`
@@ -19,6 +24,9 @@ const Title = styled.h1`
     padding-bottom: 50px;
     color: #8C1B1B;
     text-align: center;
+    @media (max-width: 425px) {
+      font-size: 28px;
+    }
 `;
 
 const ItemLabel = styled.h3`
@@ -62,6 +70,7 @@ const CreateButton = styled.button`
   text-align: center;
   /* display: inline-block; */
   font-size: 20px;
+  font-weight: 300;
   margin-top: 75px;
  margin-bottom: 100px;
  margin-left: 570px;
@@ -70,6 +79,9 @@ const CreateButton = styled.button`
   :hover {
   background-color: #BF6F6F;
   color: white;
+  }
+  @media (max-width: 425px) {
+    margin-left: 90px;
   }
 `;
 

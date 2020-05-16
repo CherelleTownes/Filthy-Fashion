@@ -11,6 +11,9 @@ const StyledHeader = styled.header`
   height: 150px;
   width: 100%;
   border-bottom: 2px solid white;
+  @media (max-width: 425px) {
+    height: 100px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -24,6 +27,12 @@ const Logo = styled(Link)`
   img {
     height:145px;
   }
+  @media (max-width: 425px) {
+    img {
+    height:90px;
+  }
+  padding-left: 20px;
+  }
 `;
 
 const Welcome = styled.h3`
@@ -32,6 +41,10 @@ const Welcome = styled.h3`
   margin-top: 15px;
   color: white;
   text-transform: capitalize;
+  @media (max-width: 425px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 
 const Button = styled.button`
@@ -51,6 +64,11 @@ const Button = styled.button`
   background-color: #BF6F6F;
   color: white;
   }
+  @media (max-width: 425px) {
+    padding: 0px 16px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
 `;
 
 const LinkLayout = styled.div`
@@ -58,6 +76,11 @@ const LinkLayout = styled.div`
   display:grid;
   grid-template-columns: 2fr 1fr;
   grid-column-gap: 75px;
+  @media (max-width: 425px) {
+    padding-right:0px; 
+    margin-right: 10px;
+    grid-column-gap: 10px;
+  }
   `;
 
 const StyledLink = styled(Link)`
@@ -65,6 +88,9 @@ font-size: 24px;
 font-weight: 300;
 text-decoration: none;
 color: white;
+@media (max-width: 425px) {
+  font-size: 22px;
+}
 `;
 
 export default function Header(props) {

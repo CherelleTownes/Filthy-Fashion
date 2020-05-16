@@ -58,7 +58,7 @@ export default class Main extends Component {
     const updatedClothingVariation = await putClothingVariation(id, clothingVariationData);
     this.setState(prevState => ({
       clothing_variations: prevState.clothing_variations.map(clothing_variation => {
-        return clothing_variation.id === id ? updatedClothingVariation : clothing_variation
+        return clothing_variation.id === parseInt(id) ? updatedClothingVariation : clothing_variation
       })
     }))
   }

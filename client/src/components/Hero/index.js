@@ -8,6 +8,9 @@ const StyledHero = styled.section`
   height: 1000px;
   background-size: cover;
   background-position: 25% 20%;
+  @media (max-width: 425px) {
+    height: 550px;
+  }
 `;
 
 export default function Hero() {

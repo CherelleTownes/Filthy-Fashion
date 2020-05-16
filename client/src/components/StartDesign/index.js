@@ -6,12 +6,15 @@ import { Route, Link } from "react-router-dom"
 const StyledStartDesign = styled.section`
   text-align: center;
  padding-top: 400px;
+ @media (max-width: 425px) {
+  padding-top: 1940px;
+ }
 `;
 
 const Vector = styled.hr`
   width: 100%;
   border: solid .5px #BF6F6F; 
-  margin: 75px 0;
+  margin: 50px 0;
 `;
 
 const Label = styled.h2`

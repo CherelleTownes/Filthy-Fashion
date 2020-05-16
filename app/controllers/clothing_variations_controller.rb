@@ -19,7 +19,7 @@ class ClothingVariationsController < ApplicationController
     @clothing_variation = ClothingVariation.new(clothing_variation_params)
 
     if @clothing_variation.save
-      render json: @clothing_variation, status: :created, location: @clothing_variation
+      render json: @clothing_variation, status: :created, :include => :category
     else
       render json: @clothing_variation.errors, status: :unprocessable_entity
     end

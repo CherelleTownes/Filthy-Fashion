@@ -7,6 +7,12 @@ const StyledTestimonials = styled.section`
   grid-template-columns: 60% 40%;
   grid-column-gap: 25px;
   padding: 30px 0;
+  @media (max-width: 425px) {
+    display: grid;
+  grid-template-columns: 35% 65%;
+  grid-column-gap: 25px;
+  padding: 30px 0;
+  }
 `;
 
 const Label = styled.h1`
@@ -15,7 +21,13 @@ const Label = styled.h1`
   padding-top: 100px;
   font-weight: 300;
   color: #8C1B1B;
+  @media (max-width: 425px) {
+    font-size: 22px;
+    padding-top: 30px;
+  }
 `;
+
+
 const TestimonialsText = styled.h3`
   font-size: 28px;
   font-style: italic;
@@ -24,11 +36,18 @@ const TestimonialsText = styled.h3`
   padding-top: 75px;
   padding-left: 20px;
   color: #8C1B1B;
+  @media (max-width: 425px) {
+    font-size: 18px;
+    padding-top: 30px;
+  }
 `;
 
 const TestimonialsImg = styled.img`
   height: 700px;
   border-radius: 20px;
+  @media (max-width: 425px) {
+    height: 365px;
+  }
 `;
 
 

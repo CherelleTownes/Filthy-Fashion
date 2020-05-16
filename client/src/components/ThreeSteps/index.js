@@ -23,6 +23,12 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 60px;
   padding: 77px 29px 100px 29px;
+  @media (max-width: 425px) {
+    display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+  padding: 77px 0 100px 0;
+  }
 `;
 
 const ThreeStepsImages = styled.img`

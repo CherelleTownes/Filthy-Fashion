@@ -9,13 +9,25 @@ const StyledSignUp = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 50px;
     align-items: center;
+    @media (max-width: 425px) {
+      grid-template-columns: 1fr;
+    }
 `;
 
 const SignUpImage = styled.img`
   width: 100%;
   height: 650px;
   border-radius: 10px;
-  
+  @media (max-width: 425px) {
+    height: 300px;
+    border-radius: 0px;
+  }
+`;
+
+const Form = styled.form`
+  @media (max-width: 425px) {
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -88,7 +100,7 @@ export default class Signup extends Component {
     return (
       <StyledSignUp>
         <SignUpImage src={SignupImg} />
-      <form onSubmit={(e) => {
+      <Form onSubmit={(e) => {
         e.preventDefault();
         this.props.handleRegister(this.state);
         this.props.history.push('/categories');
@@ -140,7 +152,7 @@ export default class Signup extends Component {
         />
         <br />
         <Button>Submit</Button>
-      </form>
+      </Form>
       </StyledSignUp>
     )
   }

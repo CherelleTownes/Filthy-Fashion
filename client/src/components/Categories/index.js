@@ -23,6 +23,12 @@ const SelectItems = styled.button`
   cursor:pointer;
   :hover {
   color: #F2A2A2;}
+  @media (max-width: 425px) {
+    height: 200px;
+  width: 200px;
+  font-size: 25px;
+  margin-bottom: 20px;
+  }
 `;
 
 const Title = styled.h1`
@@ -31,6 +37,9 @@ const Title = styled.h1`
     padding: 50px 0;
     color: #8C1B1B;
     text-align: center;
+    @media (max-width: 425px) {
+      font-size: 30px;
+    }
 `;
 
 
