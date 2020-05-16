@@ -87,6 +87,10 @@ const Button = styled.button`
   background-color: #BF6F6F;
   color: white;
   }
+  @media (max-width: 425px) {
+    width: 50%;
+    margin-bottom: 20px;
+  }
 `;
 
 

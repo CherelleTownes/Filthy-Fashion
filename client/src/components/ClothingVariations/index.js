@@ -30,6 +30,7 @@ const Text = styled.p`
   padding-bottom: 15px;
   @media (max-width: 425px) {
     margin-left: 10px;
+  }
 `;
 
 const Description = styled.input`
