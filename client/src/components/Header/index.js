@@ -26,6 +26,33 @@ const Logo = styled(Link)`
   }
 `;
 
+const Welcome = styled.h3`
+  font-size: 22px;
+  font-weight: 300;
+  margin-top: 15px;
+  color: white;
+  text-transform: capitalize;
+`;
+
+const Button = styled.button`
+  background-color: #F2C1AE; 
+  color: white; 
+  font-weight: 300;
+  border: 1px solid white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  :hover {
+  background-color: #BF6F6F;
+  color: white;
+  }
+`;
+
 const LinkLayout = styled.div`
   padding-right:250px; 
   display:grid;
@@ -51,7 +78,7 @@ export default function Header(props) {
             props.currentUser
                 ?
                 <>
-                <h3>Welcome {props.currentUser.username}! Let's Create!</h3>
+                <Welcome>Welcome {props.currentUser.username}! Let's Create!</Welcome>
                   </>
               :
           <StyledLink to="/sign-up">Sign-up</StyledLink>
@@ -64,7 +91,7 @@ export default function Header(props) {
               props.currentUser
                 ?
                 <>
-                  <button onClick={props.handleLogout}>Sign Out</button>
+                  <Button onClick={props.handleLogout}>Sign Out</Button>
                 </>
                 :
           <StyledLink to="/login">Login</StyledLink>
