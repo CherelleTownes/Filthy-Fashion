@@ -6,12 +6,12 @@ class ClothingVariationsController < ApplicationController
   def index
     @clothing_variations = ClothingVariation.all
 
-    render json: @clothing_variations
+    render json: @clothing_variations, :include => :category
   end
 
   # GET /clothing_variations/1
   def show
-    render json: @clothing_variation
+    render json: @clothing_variation, :include => :category
   end
 
   # POST /clothing_variations
@@ -19,7 +19,7 @@ class ClothingVariationsController < ApplicationController
     @clothing_variation = ClothingVariation.new(clothing_variation_params)
 
     if @clothing_variation.save
-      render json: @clothing_variation, status: :created, location: @clothing_variation
+      render json: @clothing_variation, status: :created, :include => :category
     else
       render json: @clothing_variation.errors, status: :unprocessable_entity
     end

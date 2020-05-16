@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import { getOneClothingVariation } from '../../services/api-helper';
 import styled from 'styled-components';
 
-
-const StyledClothingVariations = styled.section`
+const StyledEditClothingVariations = styled.section`
   text-align: center;
 `;
 
@@ -28,9 +28,6 @@ const Text = styled.p`
   font-weight:300;
   color: #8C1B1B;
   padding-bottom: 15px;
-  @media (max-width: 425px) {
-    margin-left: 10px;
-  }
 `;
 
 const Description = styled.input`
@@ -98,11 +95,16 @@ const Button = styled.button`
 
 
 
-export default class ClothingVariations extends Component {
+
+
+
+
+
+
+export default class EditClothingVariations extends Component {
   state = {
     description: "",
-    color: "",
-    category_id:this.props.match.params.id
+    color: ""
   }
 
   handleChange = (e) => {
@@ -111,17 +113,31 @@ export default class ClothingVariations extends Component {
       [name]: value
     });
   }
+
+  componentDidMount() {
+    this.setFormData();
+  }
+
+  setFormData = async () => {
+    const clothingVariationItem = await getOneClothingVariation(this.props.clothingVariationId);
+    this.setState({
+      description: clothingVariationItem.description,
+      color: clothingVariationItem.color
+    })
+  }
+
+
   render() {
     const { description, color } = this.state;
     return (
-      <StyledClothingVariations>
+      <StyledEditClothingVariations>
       <form onSubmit={(e) => {
         e.preventDefault();
-        this.props.handleClothingVariationSubmit(this.state);
+        this.props.handleClothingVariationUpdate(this.props.clothingVariationId, this.state);
         this.props.history.push('/clothing_variations');
       }}>
-          <Title>Design Your Item</Title>
-          <Text>Give a detailed description of how you would like your item designed. Don't forget your size!</Text>
+          <Title>Edit Your Item</Title>
+          <Text>Need to make a change to your item? Make your edits below and submit the form.</Text>
         <FormLabel htmlFor="description">Description</FormLabel>
         <Description
           id="description"
@@ -145,8 +161,7 @@ export default class ClothingVariations extends Component {
           </div>
         <Button>Submit</Button>
       </form>
-      </StyledClothingVariations>
+      </StyledEditClothingVariations>
     )
   }
 }
-
