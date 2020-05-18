@@ -40,9 +40,11 @@ const Welcome = styled.h3`
   margin-top: 15px;
   color: white;
   text-transform: capitalize;
+  margin-left: 200px;
   @media (max-width: 425px) {
-    font-size: 18px;
-    text-align: center;
+    font-size: 12px;
+    margin-left: 20px;
+    padding-top: 30px;
   }
 `;
 
@@ -117,6 +119,7 @@ export default function Header(props) {
                 ?
                 <>
                   <Button onClick={props.handleLogout}>Sign Out</Button>
+                  <Link to="/clothing_variations"><Button>All Items</Button></Link>
                 </>
                 :
           <StyledLink to="/login">Login</StyledLink>
