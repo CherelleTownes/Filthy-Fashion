@@ -100,7 +100,7 @@ _The **Filthy Fashion** MVP will function as a fullstack app. The backend will b
 
 - Desktop All Variations
 
-<img src="Images/Wireframes/Dwf-7.png">
+<img src="Images/Wireframes/Dwf-6.png">
 
 - Desktop All Items
 
